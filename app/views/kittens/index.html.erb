@@ -3,15 +3,19 @@
 <h1>Kittens</h1>
 
 <div id="kittens">
-  <% @kittens.each do |kitten| %>
-    <p>
-      <%= link_to kitten.name, kitten %>
-      <%= link_to fa_icon("trash"), kitten_path(kitten),
-                                    data: { turbo_method: :delete,
-                                            turbo_confirm: "Are you sure?"
-                                          } %>
-    </p>
-  <% end %>
+  <table style="width: 5rem">
+    <% @kittens.each do |kitten| %>
+        <tr>
+          <td><%= link_to kitten.name, kitten %></td>
+          <td>
+            <%= link_to fa_icon("trash"), kitten_path(kitten),
+                                      data: { turbo_method: :delete,
+                                              turbo_confirm: "Are you sure?"
+                                            } %>
+          </td>
+        </tr>
+    <% end %>
+  </table>
 </div>
 
-<%= button_to "New kitten", new_kitten_path %>
+<%= link_to "New kitten", new_kitten_path %>
