@@ -6,7 +6,10 @@
   <% @kittens.each do |kitten| %>
     <p>
       <%= link_to kitten.name, kitten %>
-      <%= link_to fa_icon("trash"), @kitten, method: :delete %>
+      <%= link_to fa_icon("trash"), kitten_path(kitten),
+                                    data: { turbo_method: :delete,
+                                            turbo_confirm: "Are you sure?"
+                                          } %>
     </p>
   <% end %>
 </div>
