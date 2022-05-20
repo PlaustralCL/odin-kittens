@@ -4,11 +4,11 @@
 
 <div id="kittens">
   <% @kittens.each do |kitten| %>
-    <%= render kitten %>
     <p>
-      <%= link_to "Show this kitten", kitten %>
+      <%= link_to kitten.name, kitten %>
+      <%= link_to fa_icon("trash"), @kitten, method: :delete %>
     </p>
   <% end %>
 </div>
 
-<%= link_to "New kitten", new_kitten_path %>
+<%= button_to "New kitten", new_kitten_path %>
