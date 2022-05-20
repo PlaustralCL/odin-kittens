@@ -316,7 +316,7 @@ table {
 
 td,
 th {
-  border: 1px solid var(--border);
+  /* border: 1px solid var(--border); */
   text-align: left;
   padding: 0.5rem;
 }
@@ -328,7 +328,7 @@ th {
 
 tr:nth-child(even) {
   /* Set every other cell slightly darker. Improves readability. */
-  background: var(--accent-bg);
+  /* background: var(--accent-bg); */
 }
 
 table caption {
